@@ -4,7 +4,7 @@ const isStudent = true;
 const favoriteActivities = ["football", "web development"];
 const profile = { college: "GLA University Mathura", course: "Web Development" };
 const middleName = null;
-let alternateContact; // Declared but intentionally not assigned.
+let alternateContact;
 
 const dataEntries = [
   { label: "Name", value: userName, detectedType: typeof userName },

@@ -12,7 +12,7 @@ function createModuleLoader(moduleName, delayMs, shouldFail) {
 async function loadDashboardModules() {
   const startTime = Date.now();
   const modules = ["profile", "posts", "messages"];
-  const rejectedModuleIndex = Math.floor(Math.random() * modules.length); // Exactly one module is randomly rejected.
+  const rejectedModuleIndex = Math.floor(Math.random() * modules.length);
   const loadingPromises = [
     createModuleLoader("Profile", 2000, rejectedModuleIndex === 0),
     createModuleLoader("Posts", 1500, rejectedModuleIndex === 1),

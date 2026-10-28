@@ -3,7 +3,7 @@ const userGuess = 25;
 const distanceFromSecret = Math.abs(userGuess - secretNumber);
 
 console.log(`Your guess: ${userGuess}`);
-console.log(`Secret number: ${secretNumber}`); // Shown to make this console exercise easy to verify.
+console.log(`Secret number: ${secretNumber}`);
 
 if (userGuess >= 1 && userGuess <= 50) {
   if (userGuess === secretNumber) {

@@ -8,13 +8,13 @@ const expenses = [
 
 let totalExpense = 0;
 for (const expense of expenses) {
-  totalExpense += expense.amount; // Assignment operator keeps a running total.
+  totalExpense += expense.amount;
 }
 
 const averageExpense = totalExpense / expenses.length;
 const taxRate = 0.10;
 let finalAmount = totalExpense;
-finalAmount += totalExpense * taxRate; // Add 10% tax to the total.
+finalAmount += totalExpense * taxRate;
 
 console.table(expenses);
 console.log(`Total before tax: ₹${totalExpense.toFixed(2)}`);

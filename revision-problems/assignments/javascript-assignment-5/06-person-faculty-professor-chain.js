@@ -28,7 +28,7 @@ Professor.prototype.research = function research() {
 };
 
 const professor = new Professor("Dr. Meera Sharma", "Computer Science", "Artificial Intelligence");
-console.log(professor.introduce()); // Inherited from Person.prototype.
-console.log(professor.teach()); // Inherited from Faculty.prototype.
-console.log(professor.research()); // Defined on Professor.prototype.
+console.log(professor.introduce());
+console.log(professor.teach());
+console.log(professor.research());
 console.log(`Professor -> Faculty -> Person chain works: ${professor instanceof Professor && professor instanceof Faculty && professor instanceof Person}`);

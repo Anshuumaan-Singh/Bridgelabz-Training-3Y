@@ -8,7 +8,7 @@ function createArrowUser() {
 }
 
 const arrowUser = createArrowUser.call({});
-console.log(`Arrow method this.name: ${arrowUser.showName()}`); // undefined: `this` is the outer context, not arrowUser.
+console.log(`Arrow method this.name: ${arrowUser.showName()}`);
 
 const correctedUser = {
   name: "Anshuman Singh",

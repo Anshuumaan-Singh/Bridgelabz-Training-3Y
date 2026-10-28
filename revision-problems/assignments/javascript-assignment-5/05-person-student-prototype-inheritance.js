@@ -8,10 +8,10 @@ Person.prototype.introduce = function introduce() {
 };
 
 function Student(name, branch) {
-  Person.call(this, name); // Initialize the inherited Person property.
+  Person.call(this, name);
   this.branch = branch;
 }
-Student.prototype = Object.create(Person.prototype); // Connect the prototype chain.
+Student.prototype = Object.create(Person.prototype);
 Student.prototype.constructor = Student;
 Student.prototype.showBranch = function showBranch() {
   return `I study ${this.branch}.`;

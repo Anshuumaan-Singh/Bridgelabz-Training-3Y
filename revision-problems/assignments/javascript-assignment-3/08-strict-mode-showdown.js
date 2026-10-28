@@ -3,7 +3,7 @@
 const sloppyDemo = Function("a", "a", "total = 10; return total;");
 console.log(`Without strict mode: duplicate parameters are accepted; total=${sloppyDemo(5, 10)}.`);
 console.log(`Sloppy assignment created globalThis.total: ${globalThis.total}`);
-delete globalThis.total; // Clean up the demonstration's temporary global property.
+delete globalThis.total;
 
 try {
   Function('"use strict"; return function(a, a) { return a; };');

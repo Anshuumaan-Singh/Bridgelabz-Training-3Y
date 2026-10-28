@@ -1,6 +1,6 @@
-const temperature = 22; // Degrees Celsius
+const temperature = 22;
 const isRaining = false;
-const windSpeed = 12; // Kilometres per hour
+const windSpeed = 12;
 const isColdAndWindy = temperature < 15 && windSpeed > 20;
 
 if (isRaining || isColdAndWindy) {
