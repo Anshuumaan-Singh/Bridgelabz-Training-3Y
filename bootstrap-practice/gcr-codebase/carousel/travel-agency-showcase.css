@@ -1,0 +1,18 @@
+:root { --ink: #18333b; --teal: #146c70; --sand: #f5f2eb; }
+body { color: var(--ink); background: #fbfaf7; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+.site-header { background: rgba(255,255,255,.86); border-bottom: 1px solid #e7e4dc; }
+.navbar-brand { color: var(--teal); letter-spacing: .03em; }
+.nav-link { color: #52676a; }
+.nav-link:hover { color: var(--teal); }
+.intro { max-width: 680px; }
+.eyebrow { color: var(--teal); font-size: .76rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+.destination-carousel { background: #17363a; }
+.destination-image { height: min(66vh, 610px); min-height: 390px; object-fit: cover; filter: brightness(.67); }
+.carousel-caption { right: 12%; bottom: 12%; left: 12%; text-shadow: 0 2px 18px rgba(0,0,0,.4); }
+.carousel-caption p:not(.text-uppercase) { max-width: 580px; margin: .5rem auto 1.25rem; }
+.carousel-caption .btn { color: var(--ink); text-shadow: none; }
+.journey-card { max-width: 720px; background: white; border: 1px solid #e9e6df; box-shadow: 0 16px 40px rgba(24,51,59,.06); }
+.progress { height: 1rem; background: #e7efed; }
+.progress-bar { background-color: var(--teal); }
+footer { font-size: .9rem; }
+@media (max-width: 575.98px) { .destination-image { height: 510px; min-height: 0; } .carousel-caption { right: 10%; bottom: 13%; left: 10%; } .carousel-caption h2 { font-size: 1.8rem; } .carousel-caption p:not(.text-uppercase) { font-size: .95rem; } }
