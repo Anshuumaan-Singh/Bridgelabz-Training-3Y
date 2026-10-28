@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Assignment 7</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="01-product-list-manager.js" defer></script>
+    <script src="02-character-counter.js" defer></script>
+    <script src="03-multi-step-form.js" defer></script>
+    <script src="04-theme-switcher.js" defer></script>
+    <script src="05-image-gallery-modal.js" defer></script>
+    <script src="06-table-filter.js" defer></script>
+    <script src="07-mouse-path-logger.js" defer></script>
+    <script src="08-custom-dropdown.js" defer></script>
+    <script src="09-form-submit-blocker.js" defer></script>
+  </head>
+  <body class="theme-light" data-theme="light">
+    <header class="page-header">
+      <p class="eyebrow">BridgeLabz · Core JavaScript</p>
+      <h1>Assignment 7</h1>
+      <p>Nine small browser exercises using the DOM and native JavaScript events.</p>
+    </header>
+
+    <main class="exercise-grid">
+      <section class="exercise-card" aria-labelledby="product-title">
+        <p class="exercise-number">01</p>
+        <h2 id="product-title">Product list manager</h2>
+        <p>Add products, edit inline, and use the list's delegated controls.</p>
+        <form id="product-form" class="inline-form">
+          <label class="sr-only" for="product-input">New product</label>
+          <input id="product-input" name="product" type="text" placeholder="Add a product" required />
+          <button type="submit">Add</button>
+        </form>
+        <ul id="product-list" class="product-list" aria-label="Products">
+          <li class="product-item"><span class="product-label">Notebook</span><span class="item-actions"><button type="button" data-action="edit">Edit</button><button type="button" data-action="delete" class="button-quiet">Delete</button></span></li>
+          <li class="product-item"><span class="product-label">Desk lamp</span><span class="item-actions"><button type="button" data-action="edit">Edit</button><button type="button" data-action="delete" class="button-quiet">Delete</button></span></li>
+        </ul>
+        <p id="product-status" class="status-text" aria-live="polite"></p>
+      </section>
+
+      <section class="exercise-card" aria-labelledby="counter-title">
+        <p class="exercise-number">02</p>
+        <h2 id="counter-title">Live character counter</h2>
+        <p>The counter warns at 20 characters and stops input at 100.</p>
+        <label class="field-label" for="character-input">Your message</label>
+        <textarea id="character-input" rows="4" maxlength="100" placeholder="Write up to 100 characters"></textarea>
+        <div class="counter-row"><span id="character-counter" class="counter" aria-live="polite">100 characters left</span><button id="character-reset" type="button" class="button-quiet">Reset</button></div>
+      </section>
+
+      <section class="exercise-card" aria-labelledby="steps-title">
+        <p class="exercise-number">03</p>
+        <h2 id="steps-title">Three-step form</h2>
+        <p>Complete each valid step to see a summary.</p>
+        <div class="step-indicator" aria-label="Form progress"><span data-step-indicator="0" class="is-current">Name</span><span data-step-indicator="1">Email</span><span data-step-indicator="2">Password</span></div>
+        <form id="multi-step-form" novalidate>
+          <div class="form-step" data-step-panel="0"><label class="field-label" for="step-name">Name</label><input id="step-name" name="name" type="text" autocomplete="name" required /></div>
+          <div class="form-step" data-step-panel="1" hidden><label class="field-label" for="step-email">Email</label><input id="step-email" name="email" type="email" autocomplete="email" required /></div>
+          <div class="form-step" data-step-panel="2" hidden><label class="field-label" for="step-password">Password (at least 6 characters)</label><input id="step-password" name="password" type="password" autocomplete="new-password" required /></div>
+          <p id="step-error" class="field-error" aria-live="polite"></p>
+          <div class="button-row"><button id="step-back" type="button" class="button-quiet" hidden>Back</button><button id="step-next" type="button">Next</button></div>
+        </form>
+        <div id="step-summary" class="summary-panel" hidden aria-live="polite"></div>
+      </section>
+
+      <section class="exercise-card" aria-labelledby="theme-title">
+        <p class="exercise-number">04</p>
+        <h2 id="theme-title">Theme switcher</h2>
+        <p>Choose a theme. The body stores it in <code>data-theme</code>.</p>
+        <div class="button-row theme-controls" role="group" aria-label="Choose a theme">
+          <button type="button" data-theme-choice="light" aria-pressed="true">Light</button>
+          <button type="button" data-theme-choice="dark" aria-pressed="false">Dark</button>
+          <button type="button" data-theme-choice="blue" aria-pressed="false">Blue</button>
+        </div>
+        <div class="theme-preview"><span class="preview-dot"></span><span>Theme preview</span><strong id="theme-name">Light</strong></div>
+      </section>
+
+      <section class="exercise-card exercise-card-wide" aria-labelledby="gallery-title">
+        <p class="exercise-number">05</p>
+        <h2 id="gallery-title">Image gallery</h2>
+        <p>Select an image to preview it. Click the backdrop to close.</p>
+        <div class="image-gallery">
+          <button type="button" class="gallery-tile" aria-label="Preview mountain lake"><img class="gallery-image" src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Mountain lake at sunrise" /></button>
+          <button type="button" class="gallery-tile" aria-label="Preview ocean coast"><img class="gallery-image" src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Blue ocean waves" /></button>
+          <button type="button" class="gallery-tile" aria-label="Preview forest"><img class="gallery-image" src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Sunlight through a green forest" /></button>
+          <button type="button" class="gallery-tile" aria-label="Preview mountain range"><img class="gallery-image" src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Snowy mountain range" /></button>
+          <button type="button" class="gallery-tile" aria-label="Preview field"><img class="gallery-image" src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Open green field under a wide sky" /></button>
+          <button type="button" class="gallery-tile" aria-label="Preview desert"><img class="gallery-image" src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Warm desert dunes" /></button>
+        </div>
+        <div id="gallery-modal" class="gallery-modal" hidden>
+          <div class="gallery-dialog" role="dialog" aria-modal="true" aria-label="Image preview" tabindex="-1">
+            <button id="gallery-close" type="button" class="modal-close" aria-label="Close preview">×</button>
+            <img id="gallery-large-image" src="" alt="" />
+            <p id="gallery-caption"></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="exercise-card exercise-card-wide" aria-labelledby="filter-title">
+        <p class="exercise-number">06</p>
+        <h2 id="filter-title">Student table filter</h2>
+        <p>Search by student name, branch, or CGPA.</p>
+        <label class="field-label" for="student-search">Search students</label>
+        <input id="student-search" type="search" placeholder="Try “computer” or “Asha”" />
+        <div class="table-wrap">
+          <table><thead><tr><th>Name</th><th>Branch</th><th>CGPA</th></tr></thead>
+            <tbody id="student-rows">
+              <tr><td>Asha Mehta</td><td>Computer Science</td><td>8.7</td></tr>
+              <tr><td>Rohan Das</td><td>Electronics</td><td>7.9</td></tr>
+              <tr><td>Neha Iyer</td><td>Information Technology</td><td>9.1</td></tr>
+              <tr><td>Kabir Shah</td><td>Mechanical</td><td>8.2</td></tr>
+              <tr><td>Mira Nair</td><td>Computer Science</td><td>9.4</td></tr>
+            </tbody>
+          </table>
+          <p id="no-students" class="empty-state" hidden>No results found</p>
+        </div>
+      </section>
+
+      <section class="exercise-card" aria-labelledby="mouse-title">
+        <p class="exercise-number">07</p>
+        <h2 id="mouse-title">Mouse path and coordinates</h2>
+        <p>Move inside the 400 × 400 box. Double-click to drop a red dot.</p>
+        <div id="path-box" class="path-box" aria-label="Mouse tracking area"><span class="path-hint">Move or double-click here</span></div>
+        <p id="mouse-coordinates" class="status-text" aria-live="polite">clientX: --, clientY: --</p>
+      </section>
+
+      <section class="exercise-card" aria-labelledby="dropdown-title">
+        <p class="exercise-number">08</p>
+        <h2 id="dropdown-title">Custom dropdown</h2>
+        <p>This menu uses buttons and closes on an outside click.</p>
+        <div id="custom-dropdown" class="custom-dropdown">
+          <button id="dropdown-trigger" type="button" aria-expanded="false" aria-controls="dropdown-options">Choose a topic</button>
+          <div id="dropdown-options" class="dropdown-options" hidden><button type="button" data-dropdown-value="HTML">HTML</button><button type="button" data-dropdown-value="CSS">CSS</button><button type="button" data-dropdown-value="JavaScript">JavaScript</button></div>
+        </div>
+        <p id="dropdown-selection" class="status-text" aria-live="polite">No topic selected</p>
+      </section>
+
+      <section class="exercise-card" aria-labelledby="submit-title">
+        <p class="exercise-number">09</p>
+        <h2 id="submit-title">Form submit blocker</h2>
+        <p>Invalid fields show inline errors; corrected fields clear them.</p>
+        <form id="validation-form" novalidate>
+          <label class="field-label" for="validation-name">Name</label><input id="validation-name" name="name" type="text" autocomplete="name" />
+          <span id="validation-name-error" class="field-error" aria-live="polite"></span>
+          <label class="field-label" for="validation-email">Email</label><input id="validation-email" name="email" type="text" autocomplete="email" />
+          <span id="validation-email-error" class="field-error" aria-live="polite"></span>
+          <label class="field-label" for="validation-password">Password</label><input id="validation-password" name="password" type="password" autocomplete="new-password" />
+          <span id="validation-password-error" class="field-error" aria-live="polite"></span>
+          <button type="submit">Submit form</button>
+          <p id="form-success" class="success-message" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+    <footer class="page-footer">Core JavaScript · Assignment 7</footer>
+  </body>
+</html>
