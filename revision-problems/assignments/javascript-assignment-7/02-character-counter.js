@@ -12,7 +12,6 @@ function updateCharacterCounter() {
   characterCounter.classList.toggle("is-limit", remaining === 0);
 }
 
-// Only printable input is blocked at the limit, so navigation and deletion still work.
 characterInput.addEventListener("keydown", (event) => {
   const isModifiedKey = event.ctrlKey || event.metaKey || event.altKey;
   const isTextKey = event.key.length === 1 || event.key === "Enter";

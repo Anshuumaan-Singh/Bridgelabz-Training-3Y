@@ -36,7 +36,6 @@ Object.keys(validationFields).forEach((fieldName) => {
 });
 
 validationForm.addEventListener("submit", (event) => {
-  // Keep the page in place while the required fields are checked.
   event.preventDefault();
   const isValid = Object.keys(validationFields).map(updateFieldError).every(Boolean);
   if (isValid) {

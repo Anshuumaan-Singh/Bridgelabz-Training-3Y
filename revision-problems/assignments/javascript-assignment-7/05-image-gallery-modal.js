@@ -24,7 +24,6 @@ document.querySelectorAll(".gallery-image").forEach((image) => {
 
 galleryCloseButton.addEventListener("click", closeGalleryModal);
 galleryModal.addEventListener("click", closeGalleryModal);
-// Stop clicks in the dialog from bubbling to the backdrop's close handler.
 galleryDialog.addEventListener("click", (event) => event.stopPropagation());
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape" && !galleryModal.hidden) closeGalleryModal();

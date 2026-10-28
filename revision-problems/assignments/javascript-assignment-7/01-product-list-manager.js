@@ -77,7 +77,6 @@ function startProductEdit(item) {
   editor.addEventListener("blur", () => saveProductEdit(item), { once: true });
 }
 
-// One list listener handles controls on both starting items and newly added ones.
 productList.addEventListener("click", (event) => {
   const button = event.target.closest("button[data-action]");
   if (!button) return;
@@ -93,7 +92,6 @@ productList.addEventListener("click", (event) => {
   if (button.dataset.action === "edit") startProductEdit(item);
 });
 
-// Clicking outside the active item saves its current text.
 document.addEventListener("click", (event) => {
   const editingItem = productList.querySelector('[data-editing="true"]');
   if (editingItem && !editingItem.contains(event.target)) saveProductEdit(editingItem);

@@ -8,7 +8,6 @@ pathBox.addEventListener("mousemove", (event) => {
 });
 
 pathBox.addEventListener("dblclick", (event) => {
-  // Convert client coordinates into positions relative to the tracking box.
   const boxBounds = pathBox.getBoundingClientRect();
   const dot = document.createElement("span");
   dot.className = "mouse-dot";

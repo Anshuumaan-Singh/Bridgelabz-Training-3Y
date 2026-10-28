@@ -22,7 +22,6 @@ dropdownOptions.addEventListener("click", (event) => {
   setDropdownOpen(false);
 });
 
-// Capture runs before the dropdown's own click handlers, so outside clicks close it.
 document.addEventListener("click", (event) => {
   if (!customDropdown.contains(event.target)) setDropdownOpen(false);
 }, true);

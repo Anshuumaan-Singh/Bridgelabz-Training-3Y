@@ -18,7 +18,6 @@ function renderStep() {
 }
 
 function isActiveStepValid() {
-  // Validate only the visible field before letting the user continue.
   const currentInput = stepPanels[activeStep].querySelector("input");
   const value = currentInput.value.trim();
   if (!value) {

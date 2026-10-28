@@ -5,7 +5,6 @@ const studentRows = [...document.querySelectorAll("#student-rows tr")];
 const noStudentsMessage = document.querySelector("#no-students");
 
 studentSearch.addEventListener("input", () => {
-  // Lowercase both sides so a search matches regardless of letter case.
   const query = studentSearch.value.trim().toLocaleLowerCase();
   let visibleCount = 0;
 
