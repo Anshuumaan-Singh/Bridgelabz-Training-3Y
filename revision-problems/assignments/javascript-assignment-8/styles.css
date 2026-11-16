@@ -1,0 +1,35 @@
+:root {
+  color-scheme: light;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --page: #f4f6f4;
+  --card: #fff;
+  --ink: #24332d;
+  --muted: #68766f;
+  --line: #dce5df;
+  --accent: #28785c;
+  --accent-dark: #1d5c45;
+  --soft: #edf5f0;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--ink); }
+button { border: 0; border-radius: .7rem; padding: .7rem 1rem; background: var(--accent); color: #fff; font: inherit; font-weight: 700; cursor: pointer; }
+button:hover { background: var(--accent-dark); }
+button:focus-visible { outline: 3px solid #e5ad55; outline-offset: 2px; }
+.page-header, .page-footer { width: min(1120px, calc(100% - 2rem)); margin: 0 auto; }
+.page-header { padding: 3.25rem 0 2rem; }
+.page-header h1 { margin: .2rem 0 .6rem; font-size: clamp(2.4rem, 6vw, 4rem); letter-spacing: -.04em; }
+.page-header > p:not(.eyebrow) { max-width: 700px; color: var(--muted); font-size: 1.05rem; line-height: 1.55; }
+.eyebrow, .exercise-number { color: var(--accent-dark); font-size: .78rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+.exercise-grid { width: min(1120px, calc(100% - 2rem)); margin: 0 auto 3rem; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.15rem; }
+.exercise-card { min-width: 0; padding: 1.4rem; border: 1px solid var(--line); border-radius: 1.1rem; background: var(--card); box-shadow: 0 12px 28px #20372a0b; }
+.exercise-card-wide { grid-column: 1 / -1; }
+.exercise-number { margin: 0 0 .5rem; }
+.exercise-card h2 { margin: 0 0 .45rem; font-size: 1.25rem; }
+.exercise-card > p:not(.exercise-number) { min-height: 3rem; color: var(--muted); line-height: 1.5; }
+code { border-radius: .25rem; padding: .08rem .25rem; background: var(--soft); color: var(--accent-dark); }
+.output { min-height: 5.5rem; max-height: 18rem; overflow: auto; margin: .85rem 0 0; padding: .9rem; border: 1px solid var(--line); border-radius: .7rem; background: #f8faf8; color: #26382f; font: .84rem/1.55 Consolas, "Courier New", monospace; white-space: pre-wrap; overflow-wrap: anywhere; }
+.page-footer { padding: 0 0 2rem; color: var(--muted); text-align: center; font-size: .85rem; }
+@media (max-width: 640px) { .exercise-grid { grid-template-columns: 1fr; } .exercise-card-wide { grid-column: auto; } .page-header { padding-top: 2.4rem; } }
